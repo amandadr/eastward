@@ -1,0 +1,7 @@
+[build]
+  command = "npm run build"
+
+[build.environment]
+  # NEXT_PUBLIC_* values are intentionally inlined into the client bundle.
+  # Omit them so Netlify secrets scanning does not fail the deploy.
+  SECRETS_SCAN_OMIT_KEYS = "NEXT_PUBLIC_SITE_URL,NEXT_PUBLIC_GOOGLE_MAPS_API_KEY"
